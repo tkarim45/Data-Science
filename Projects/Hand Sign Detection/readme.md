@@ -6,7 +6,7 @@ This project is aimed at developing an AI-based system that can detect sign lang
 
 ## Introduction ##
 
-Sign language is a visual language that is used by deaf and hard-of-hearing people to communicate with each other. While it is a very effective means of communication, it can be difficult for people who do not know the language to understand. This is where our project comes in.
+Sign language is a visual language that is used by deaf and hard-of-hearing people to communicate with each other. While it is a very effective means of communication, it can be difficult for people who do not know the language to understand. This is where our project comes in. 
 
 Our project aims to develop a system that can detect sign languages and translate them into text or speech. This will enable people who do not know sign language to communicate with people who do.
 
@@ -16,25 +16,42 @@ Our project aims to develop a system that can detect sign languages and translat
 
 Our approach to building this system involves training a deep learning model on a large dataset of sign language videos. We will be using a combination of computer vision and natural language processing techniques to detect the signs and translate them.
 
-The dataset we will be using is the ASL Alphabet dataset, which contains over 27,000 images of the American Sign Language alphabet. We will use transfer learning on pre-trained models such as VGG or ResNet to extract features and then apply classification algorithms to detect the signs.
+The dataset we will be using is our own image dataset, which contains over 500 images of each class of the American Sign Language alphabet. We will use support vector machine to train the model tp predict the sign languages and apply the model to the real time video to predict the sign language.
 
-We will also use natural language processing techniques to convert the detected signs into text or speech. For this, we will use libraries like NLTK and Text-to-Speech (TTS) engines like Google Text-to-Speech.
+We will also use natural language processing techniques to convert the detected signs into text or speech. For this, we will use use the trained model and predict the signs in real time.
+
+## Creating Images ##
+
+The collect_images.py file is used to make 3 classes of any 3 alphabet hand sign and take 500 images of that hand sign and store it in the images directory as specified.
+
+## Creating Dataset ##
+
+After taking the images, the next step is creating the data set. The create_dataset.py file reads all the images and assign them label. Afterwards using mediapipe library the hand landmarks are made and drawn on the frame and store the axis of those landmarks and store it in a data dict. 
+
+Now, we have labels and hand landmarks data. Finally, we create the final dataset containing labels and hand landmarks.
+
+## Classifier ##
+
+The classifier.py is used to train the model to predict the hand signs. Firstly, we would read the dataset file that we created then apply a classificaton model such as support vector machine to train the model.
+
+Afterwards, the dataset is split into train and test. Model is trained of train data and then accuracy is check on the test data. The model is then stored in a model.p file to be later used for real time prediction.
 
 ## Technologies Used ##
 
 The following technologies will be used in this project:
 
 * Python
+* Mediapipe
 * Support Vector Machine
 * OpenCV
 * Project Goals
 
 ## The goals of this project are as follows: ##
 
-* Develop an AI-based system that can detect sign languages in real-time.
-* Translate the detected signs into text or speech.
-* Achieve high accuracy in sign detection.
-* Provide a user-friendly interface for the system.
+* Develop an AI-based system that can detect sign languages in real-time
+* Translate the detected signs into text or speech
+* Achieve high accuracy in sign detection
+* Provide a user-friendly interface for the system
 
 ## Conclusion ##
 
