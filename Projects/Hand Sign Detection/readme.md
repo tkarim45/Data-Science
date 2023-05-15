@@ -1,16 +1,18 @@
-# **Sign Language Detection Project**
+# Sign Language Detection Project #
 
 ![alt text](https://www.mdpi.com/jimaging/jimaging-06-00073/article_deploy/html/images/jimaging-06-00073-g009.png)
 
 This project is aimed at developing an AI-based system that can detect sign languages in real-time.
 
-# **Introduction**
+## Introduction ##
 
 Sign language is a visual language that is used by deaf and hard-of-hearing people to communicate with each other. While it is a very effective means of communication, it can be difficult for people who do not know the language to understand. This is where our project comes in.
 
 Our project aims to develop a system that can detect sign languages and translate them into text or speech. This will enable people who do not know sign language to communicate with people who do.
 
-# **Approach**
+## Approach ##
+
+![alt text](https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-022-08133-z/MediaObjects/41598_2022_8133_Fig1_HTML.png)
 
 Our approach to building this system involves training a deep learning model on a large dataset of sign language videos. We will be using a combination of computer vision and natural language processing techniques to detect the signs and translate them.
 
@@ -18,24 +20,22 @@ The dataset we will be using is the ASL Alphabet dataset, which contains over 27
 
 We will also use natural language processing techniques to convert the detected signs into text or speech. For this, we will use libraries like NLTK and Text-to-Speech (TTS) engines like Google Text-to-Speech.
 
-# **Technologies Used**
+## Technologies Used ##
 
 The following technologies will be used in this project:
 
-Python
-TensorFlow
-Keras
-OpenCV
-NLTK
-Google Text-to-Speech
-Project Goals
+* Python
+* Support Vector Machine
+* OpenCV
+* Project Goals
 
-# **The goals of this project are as follows:**
+## The goals of this project are as follows: ##
 
-Develop an AI-based system that can detect sign languages in real-time.
-Translate the detected signs into text or speech.
-Achieve high accuracy in sign detection.
-Provide a user-friendly interface for the system.
-Conclusion
+* Develop an AI-based system that can detect sign languages in real-time.
+* Translate the detected signs into text or speech.
+* Achieve high accuracy in sign detection.
+* Provide a user-friendly interface for the system.
+
+## Conclusion ##
 
 The Sign Language Detection Project is an important project that has the potential to help deaf and hard-of-hearing people communicate with the hearing community. Our goal is to develop a system that can accurately detect signs in real-time and translate them into text or speech. With this system, we hope to bridge the communication gap between deaf and hearing communities.
