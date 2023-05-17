@@ -117,6 +117,7 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 
 ![alt text](https://editor.analyticsvidhya.com/uploads/97471svm_1.PNG)
 
+
 ## The goals of this project are as follows: ##
 
 * Develop an AI-based system that can detect sign languages in real-time
@@ -127,6 +128,10 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 ## Accuracy ## 
 
 ![Image 1](Images/APRM.png)
+
+### ###
+
+![Image 1](Images/graph1.png)
 
 ### ###
 
