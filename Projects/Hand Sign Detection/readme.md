@@ -30,11 +30,48 @@ After taking the images, the next step is creating the data set. The create_data
 
 Now, we have labels and hand landmarks data. Finally, we create the final dataset containing labels and hand landmarks.
 
+### Steps ###
+
+1. Importing necessary libraries: The code imports the required libraries, including os for file and directory operations, cv2 for image processing, mediapipe for hand landmark detection, matplotlib.pyplot for visualization, and pickle for data serialization.
+2. Defining the image directory: The code sets the directory path where the images are located using the variable data_dir.
+3. Setting up the hand landmark detection: The code initializes the mp_hands.Hands class from the mp.solutions.hands module for detecting hand landmarks in the images. It also stores other modules related to drawing and styles for later use.
+4. Creating empty lists for data and labels: The code initializes empty lists to store the hand landmark data and corresponding labels.
+5. Looping through the directories and images: The code iterates over the directories within the data_dir using os.listdir(). Within each directory, it loops over the image files using os.listdir() again.
+6. Processing each image: For each image, the code performs the following steps:
+    * Reads the image using cv2.imread() and stores it in the img variable.
+    * Converts the image from BGR to RGB using cv2.cvtColor() and stores it in the img_rgb variable.
+    * Uses hand.process() to detect hand landmarks in the RGB image and stores the result in the result variable.
+7. Extracting hand landmarks: If the result has detected hand landmarks, the code proceeds to extract the landmarks' coordinates. For each hand detected in the image:
+    * Creates an empty list (data_auxilary) to store the landmarks' coordinates.
+    * Iterates over the landmarks and retrieves the x and y coordinates.
+    * Appends the x and y coordinates to data_auxilary.
+    * Appends data_auxilary to the data list.
+    * Appends the directory name (label) to the labels list.
+8. Serializing the data: After processing all images, the code opens a file named 'data.pickle' in write-binary mode using open('data.pickle', 'wb'). It then uses pickle.dump() to store the data and labels dictionary ({'data': data, 'labels': labels}) into the file.
+9. Closing the file: Finally, the code closes the file using f.close().
+
 ## Classifier ##
 
 The classifier.py is used to train the model to predict the hand signs. Firstly, we would read the dataset file that we created then apply a classificaton model such as support vector machine to train the model.
 
 Afterwards, the dataset is split into train and test. Model is trained of train data and then accuracy is check on the test data. The model is then stored in a model.p file to be later used for real time prediction.
+
+### Steps ###
+
+1. Importing necessary libraries: The code imports the required libraries, including pickle for data serialization, svm from scikit-learn for Support Vector Machine models, train_test_split from scikit-learn for splitting the data into training and testing sets, accuracy_score from scikit-learn for evaluating the model's accuracy, and numpy for array operations.
+2. Loading the data: The code loads a data dictionary from a file named 'data.pickle' using the pickle.load() function. The data dictionary contains two keys: 'data' and 'labels', which store the input data and corresponding labels.
+Converting data and labels to numpy arrays: The code converts the data and labels from the data dictionary into numpy arrays using np.array().
+3. Splitting the data into train and test sets: The code uses the train_test_split() function to split the data and labels into training and testing sets. It assigns 80% of the data to the training set (X_train and y_train) and 20% to the test set (X_test and y_test). The data is shuffled according to the labels using shuffle=True and stratified to maintain the class distribution using stratify=labels.
+4. Training an SVM model: The code creates an SVM model object (model) using svm.SVC with a linear kernel, regularization parameter C=1, and automatic gamma calculation (gamma='auto'). The model is trained using the training data (X_train and y_train) with the fit() method.
+5. Evaluating the model: The code applies the trained model to the test data (X_test) to make predictions using the predict() method, storing the predicted labels in y_pred. It then calculates the accuracy of the model's predictions on the test data using the accuracy_score() function, comparing the predicted labels (y_pred) with the true labels (y_test).
+6. Printing the accuracy: The code prints the accuracy of the model on the test data by displaying the result of the accuracy_score() function.
+7. Storing the model: The code opens a file named 'model.p' in write-binary mode using open('model.p', 'wb'). It then uses pickle.dump() to store the trained model ({'model': model}) in the file. Finally, it closes the file using f.close(). The purpose of storing the model is to be able to load and use it later for making predictions on new, unseen data.
+
+### Classifying Images ###
+
+### Image A ###
+
+![Image 1](Images/A.jpeg)
 
 ## Technologies Used ##
 
@@ -66,9 +103,7 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 * Binary classification: SVMs are originally designed for binary classification, although there are extensions to handle multi-class problems. In scenarios with more than two classes, additional strategies like one-vs-rest or one-vs-one are needed, which can increase complexity.
 * Memory-intensive for large datasets: SVMs require storing the support vectors in memory during inference, which can be memory-intensive for large datasets. This limits their scalability to very large datasets.
 
-
-
-
+### ###
 
 ![alt text](https://editor.analyticsvidhya.com/uploads/97471svm_1.PNG)
 
