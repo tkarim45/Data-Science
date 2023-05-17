@@ -73,6 +73,16 @@ Converting data and labels to numpy arrays: The code converts the data and label
 
 ![Image 1](Images/A.jpeg)
 
+### Image B ###
+
+![Image 1](Images/B.jpeg)
+
+### Image C ###
+
+![Image 1](Images/C.jpeg)
+
+### ###
+
 ## Technologies Used ##
 
 The following technologies will be used in this project:
