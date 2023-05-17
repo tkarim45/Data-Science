@@ -46,6 +46,32 @@ The following technologies will be used in this project:
 * OpenCV
 * Project Goals
 
+## SVM ## 
+
+Support Vector Machines (SVMs) are a popular machine learning algorithm that can be used for both classification and regression tasks. Here are the pros and cons of using SVMs:
+
+### Pros ###
+
+* Effective in high-dimensional spaces: SVMs perform well even when the number of features is greater than the number of samples. They can handle large feature spaces effectively, making them suitable for complex problems.
+* Good generalization: SVMs aim to find a decision boundary with the largest margin, which leads to better generalization. They tend to have lower error rates on unseen data compared to other algorithms.
+* Ability to handle non-linear data: SVMs can handle non-linear data by using kernel functions, which transform the original feature space into a higher-dimensional space, allowing non-linear decision boundaries to be learned.
+* Robust to outliers: SVMs are less affected by outliers because they focus on maximizing the margin. Outliers located far from the decision boundary have less impact on the model.
+* Theoretical foundation: SVMs have a solid theoretical foundation based on statistical learning theory, providing guarantees on the model's performance under certain conditions.
+
+### Cons ###
+
+* Computationally expensive: SVMs can be computationally expensive, especially for large datasets. Training time and memory requirements increase with the number of samples and features. Additionally, hyperparameter tuning can further increase computational complexity.
+* Sensitivity to parameter tuning: SVMs have several hyperparameters that need to be carefully selected. The choice of kernel, regularization parameter, and kernel-specific parameters can significantly impact the model's performance. Tuning these parameters often requires expertise and can be time-consuming.
+* Limited interpretability: SVMs do not provide direct interpretations of the relationship between the features and the outcome. It can be challenging to understand the underlying factors driving the model's predictions, making it less suitable for tasks that require explainability.
+* Binary classification: SVMs are originally designed for binary classification, although there are extensions to handle multi-class problems. In scenarios with more than two classes, additional strategies like one-vs-rest or one-vs-one are needed, which can increase complexity.
+* Memory-intensive for large datasets: SVMs require storing the support vectors in memory during inference, which can be memory-intensive for large datasets. This limits their scalability to very large datasets.
+
+
+
+
+
+![alt text](https://editor.analyticsvidhya.com/uploads/97471svm_1.PNG)
+
 ## The goals of this project are as follows: ##
 
 * Develop an AI-based system that can detect sign languages in real-time
