@@ -124,6 +124,12 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 * Achieve high accuracy in sign detection
 * Provide a user-friendly interface for the system
 
+## Accuracy ## 
+
+![Image 1](Images/APRM.png)
+
+### ###
+
 ## Conclusion ##
 
 The Sign Language Detection Project is an important project that has the potential to help deaf and hard-of-hearing people communicate with the hearing community. Our goal is to develop a system that can accurately detect signs in real-time and translate them into text or speech. With this system, we hope to bridge the communication gap between deaf and hearing communities.
