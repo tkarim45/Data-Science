@@ -24,6 +24,28 @@ We will also use natural language processing techniques to convert the detected 
 
 The collect_images.py file is used to make 3 classes of any 3 alphabet hand sign and take 500 images of that hand sign and store it in the images directory as specified.
 
+### Steps ###
+
+1. Importing necessary libraries: The code imports various libraries, including os, cv2 (OpenCV), mediapipe, matplotlib.pyplot, and pickle.
+2. Setting the image directory: The code defines the directory where the images are stored using the variable data_dir.
+3. Setting up modules and classes from the mediapipe library: The code initializes variables to store different modules and classes from the mediapipe library. These modules and classes are used for hand landmark detection and drawing.
+4. Initializing empty lists: Two empty lists, data and labels, are created to store the extracted hand landmark data and corresponding labels, respectively.
+5. Looping through the image directories: The code iterates through the directories within the specified data_dir directory.
+6. Looping through the images in each directory: For each directory, the code loops through the images contained within it.
+7. Processing each image:
+      * An empty list, data_auxiliary, is created to store the extracted hand landmark data for the current image.
+      * The image is read using cv2.imread and stored in the variable img.
+      * The image is converted from BGR to RGB using cv2.cvtColor and stored in the variable img_rgb.
+      * The hand object's process method is used to detect hand landmarks in the image, and the result is stored in the variable result.
+      * Checking if hand landmarks were detected in the image using result.multi_hand_landmarks.
+      * If hand landmarks are detected, the code loops through each detected hand landmark.
+      * For each hand landmark, the x and y coordinates are extracted and stored in the data_auxiliary list.
+      * The data_auxiliary list is then appended to the data list, representing the hand landmark data for the current image.
+      * The label of the image (the directory name) is appended to the labels list.
+8. Storing the data and labels: After processing all the images, a dataset dictionary containing the data and labels lists is created. The dictionary is then dumped into a file named 'data.pickle' using the pickle.dump method. This file will store the extracted hand landmark data and corresponding labels.
+9. Closing the file: Finally, the file is closed using the close method.
+
+
 ## Creating Dataset ##
 
 After taking the images, the next step is creating the data set. The create_dataset.py file reads all the images and assign them label. Afterwards using mediapipe library the hand landmarks are made and drawn on the frame and store the axis of those landmarks and store it in a data dict. 
@@ -117,6 +139,7 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 
 ![alt text](https://editor.analyticsvidhya.com/uploads/97471svm_1.PNG)
 
+
 ## The goals of this project are as follows: ##
 
 * Develop an AI-based system that can detect sign languages in real-time
@@ -127,6 +150,10 @@ Support Vector Machines (SVMs) are a popular machine learning algorithm that can
 ## Accuracy ## 
 
 ![Image 1](Images/APRM.png)
+
+### ###
+
+![Image 1](Images/graph1.png)
 
 ### ###
 
