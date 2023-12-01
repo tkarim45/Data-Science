@@ -1,11 +1,17 @@
 import os
 import cv2
 import mediapipe as mp
-from matplotlib import pyplot as plt
 import pickle
 
 # direcrtory of the images to read the data from
 data_dir = 'images/'
+
+# remove .DS_Store file from the directory
+if '.DS_Store' in os.listdir(data_dir):
+    os.remove(os.path.join(data_dir, '.DS_Store'))
+
+# print the folder in the images directory
+print(os.listdir(data_dir))
 
 # storing mp.solutions.hands in a variable for ease of use later
 # mp.solutions.hands is the module that will be used to detect the hand landmarks in the image
